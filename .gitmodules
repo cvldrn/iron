@@ -1,0 +1,3 @@
+[submodule "lib/lando"]
+	path = lib/lando
+	url = git@github.com:lando/lando.git

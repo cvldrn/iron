@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# init a local pantheon env using 
+# the current working directory 
+
+set -e # return early if fails
+set -a # all vars will be exported
+. ./.env
+set +a
+
+err() {
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
+}
+
+init_lando() {
+  lndo init \
+    --recipe pantheon \
+    --source cwd \
+    --pantheon-site "$1" \
+    --pantheon-auth "$PANTHEON_MACHINE_TOKEN"
+}
+
+main() {
+  if [[ ! -z $1 ]]; then
+    init_lando $1
+  else
+    err "must define pantheon site in command i.e. $ iron init <pantheon-site-name>" 
+  fi
+}
+
+main "$@"

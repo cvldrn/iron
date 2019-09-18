@@ -1,0 +1,32 @@
+{
+  "name": "@wafleiron/cli",
+  "version": "0.0.2",
+  "description": "Wafleiron is a pantheon integration tool and this is where you get started :)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wafleiron/cli.git"
+  },
+  "keywords": [
+    "bash",
+    "node",
+    "pantheon",
+    "lando",
+    "terminus"
+  ],
+  "author": "wafleiron",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/wafleiron/cli/issues"
+  },
+  "homepage": "https://github.com/wafleiron/cli#readme",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "bin": {
+    "wafleiron": "node src/index.js",
+    "iron": "node src/index.js"
+  },
+  "dependencies": {
+    "commander": "^3.0.1"
+  }
+}
